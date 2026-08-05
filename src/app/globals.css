@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+/* Enable class-based dark mode, toggled by next-themes (`<html class="dark">`). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Light theme (default). Theme tokens are plain CSS variables so they can be
+   overridden by the `.dark` scope below and picked up by Tailwind utilities. */
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+  --accent: #7c3aed;
+  --accent-muted: #6d28d9;
+  --muted: #64748b;
+
+  /* Decorative elements (Hero grid, glows) — darker on light background. */
+  --hero-glow: rgba(124, 58, 237, 0.12);
+  --hero-grid-line: rgba(15, 23, 42, 0.06);
+}
+
+/* Dark theme. next-themes adds the `dark` class to <html>. */
+.dark {
+  --background: #0a0a0f;
+  --foreground: #e2e8f0;
+  --surface: #12121a;
+  --border: #1e1e2e;
+  --accent: #7c3aed;
+  --accent-muted: #4c1d95;
+  --muted: #64748b;
+
+  /* Decorative elements — light on dark background. */
+  --hero-glow: rgba(124, 58, 237, 0.15);
+  --hero-grid-line: rgba(226, 232, 240, 0.5);
+}
+
+/*
+ * Map theme tokens to Tailwind color utilities (bg-background, text-foreground,
+ * border-border, text-muted, bg-surface, text-accent, ...).
+ * `inline` makes utilities resolve to the variables above at build time.
+ */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-muted: var(--accent-muted);
+  --color-muted: var(--muted);
+  --font-display: var(--font-syne), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Gradient text utility — used on the Hero accent name. */
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent), var(--accent-muted));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+::selection {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
