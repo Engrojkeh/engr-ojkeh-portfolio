@@ -26,7 +26,7 @@ export default function Experience() {
                   <div className="hidden md:flex relative">
                     <span className="absolute left-8 -translate-x-1/2 h-4 w-4 rounded-full border-2 border-accent bg-background" aria-hidden="true" />
                   </div>
-                  <div className="p-6 md:p-8 rounded-xl border border-border bg-surface/40 hover:border-accent/30 transition-colors">
+                  <div className="p-6 md:p-8 rounded-xl border border-border bg-surface hover:border-accent/30 transition-colors">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-3">
                       <h3 className="font-display text-xl font-bold text-foreground">
                         {item.company}

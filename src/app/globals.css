@@ -9,14 +9,15 @@
   --background: #f8fafc;
   --foreground: #0f172a;
   --surface: #ffffff;
-  --border: #e2e8f0;
+  --surface-muted: #f1f5f9;
+  --border: #cbd5e1;
   --accent: #7c3aed;
   --accent-muted: #6d28d9;
-  --muted: #64748b;
+  --muted: #475569;
 
   /* Decorative elements (Hero grid, glows) — darker on light background. */
-  --hero-glow: rgba(124, 58, 237, 0.12);
-  --hero-grid-line: rgba(15, 23, 42, 0.06);
+  --hero-glow: rgba(124, 58, 237, 0.15);
+  --hero-grid-line: rgba(15, 23, 42, 0.15);
 }
 
 /* Dark theme. next-themes adds the `dark` class to <html>. */
@@ -24,13 +25,14 @@
   --background: #0a0a0f;
   --foreground: #e2e8f0;
   --surface: #12121a;
+  --surface-muted: #0f0f17;
   --border: #1e1e2e;
   --accent: #7c3aed;
   --accent-muted: #4c1d95;
   --muted: #64748b;
 
   /* Decorative elements — light on dark background. */
-  --hero-glow: rgba(124, 58, 237, 0.15);
+  --hero-glow: rgba(124, 58, 237, 0.18);
   --hero-grid-line: rgba(226, 232, 240, 0.5);
 }
 
@@ -43,6 +45,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
   --color-border: var(--border);
   --color-accent: var(--accent);
   --color-accent-muted: var(--accent-muted);

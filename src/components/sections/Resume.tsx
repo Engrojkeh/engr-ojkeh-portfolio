@@ -7,7 +7,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 
 export default function Resume() {
   return (
-    <section id="resume" className="py-20 md:py-32 bg-surface/20">
+    <section id="resume" className="py-20 md:py-32 bg-surface-muted">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <SectionHeading
@@ -17,7 +17,7 @@ export default function Resume() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.1} className="max-w-2xl">
-          <div className="p-8 md:p-10 rounded-xl border border-border bg-surface/40 text-center">
+          <div className="p-8 md:p-10 rounded-xl border border-border bg-surface text-center">
             <div className="inline-flex items-center justify-center p-4 rounded-full bg-accent/10 mb-6">
               <FileText className="h-10 w-10 text-accent" aria-hidden="true" />
             </div>

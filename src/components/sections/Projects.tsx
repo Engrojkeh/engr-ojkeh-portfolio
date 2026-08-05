@@ -20,7 +20,7 @@ export default function Projects() {
       : projects.filter((p) => p.featured && p.category.includes(activeFilter));
 
   return (
-    <section id="projects" className="py-20 md:py-32 bg-surface/20">
+    <section id="projects" className="py-20 md:py-32 bg-surface-muted">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <SectionHeading

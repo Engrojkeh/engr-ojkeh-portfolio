@@ -66,7 +66,7 @@ const differentiators = [
 
 export default function WhyWorkWithMe() {
   return (
-    <section id="why-me" className="py-20 md:py-32 bg-surface/20">
+    <section id="why-me" className="py-20 md:py-32 bg-surface-muted">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <SectionHeading
@@ -80,7 +80,7 @@ export default function WhyWorkWithMe() {
             <AnimatedSection
               key={item.title}
               delay={index * 0.05}
-              className="p-6 rounded-xl border border-border bg-surface/40 hover:border-accent/50 transition-all duration-300"
+              className="p-6 rounded-xl border border-border bg-surface hover:border-accent/50 transition-all duration-300"
             >
               <div className="p-2.5 rounded-lg bg-accent/10 w-fit mb-4">
                 <item.icon className="h-5 w-5 text-accent" aria-hidden="true" />
