@@ -24,7 +24,7 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://engrojkeh.dev"),
+  metadataBase: new URL("https://engr-ojkeh-portfolio.vercel.app"),
   title: {
     default: "Engr. Ojkeh — Software Engineer & Full Stack Developer",
     template: "%s | Engr. Ojkeh",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://engrojkeh.dev",
+    url: "https://engr-ojkeh-portfolio.vercel.app",
     siteName: "Engr. Ojkeh Portfolio",
     title: "Engr. Ojkeh — Software Engineer & Full Stack Developer",
     description:

@@ -30,24 +30,36 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 -z-10" aria-hidden="true">
+        {/* Gradient mesh — layered radial gradients for depth */}
         <div
-          className="absolute inset-0 opacity-40"
+          className="absolute inset-0"
           style={{
             background: `
-              radial-gradient(circle at 20% 50%, var(--hero-glow) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, var(--hero-glow) 0%, transparent 50%),
-              radial-gradient(circle at 50% 80%, var(--hero-glow) 0%, transparent 50%)
+              radial-gradient(ellipse 80% 50% at 20% 40%, var(--hero-glow) 0%, transparent 60%),
+              radial-gradient(ellipse 60% 40% at 75% 25%, var(--hero-glow) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 60% at 50% 85%, var(--hero-glow) 0%, transparent 50%),
+              radial-gradient(ellipse 40% 30% at 90% 70%, var(--hero-glow) 0%, transparent 45%)
             `,
           }}
         />
+        {/* Grid overlay */}
         <div
-          className="absolute inset-0 opacity-[0.06]"
+          className="absolute inset-0 opacity-[0.05]"
           style={{
             backgroundImage: `
               linear-gradient(var(--hero-grid-line) 1px, transparent 1px),
               linear-gradient(90deg, var(--hero-grid-line) 1px, transparent 1px)
             `,
             backgroundSize: "60px 60px",
+          }}
+        />
+        {/* Soft radial spotlight behind the headline */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(circle 400px at 50% 45%, var(--hero-glow) 0%, transparent 70%)",
+            opacity: 0.6,
           }}
         />
       </div>
