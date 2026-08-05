@@ -43,7 +43,7 @@ export default function About() {
                 {values.map((value) => (
                   <div
                     key={value.label}
-                    className="flex flex-col items-center text-center p-4 rounded-xl border border-border bg-surface/40 hover:border-accent/50 transition-colors"
+                    className="flex flex-col items-center text-center p-4 rounded-xl border border-border bg-surface hover:border-accent/50 transition-colors"
                   >
                     <value.icon className="h-8 w-8 text-accent mb-3" aria-hidden="true" />
                     <span className="text-xs font-medium text-foreground leading-tight">
@@ -60,7 +60,7 @@ export default function About() {
                 {personal.highlights.map((highlight) => (
                   <div
                     key={highlight}
-                    className="flex items-center gap-3 p-3 rounded-lg border border-border bg-surface/40"
+                    className="flex items-center gap-3 p-3 rounded-lg border border-border bg-surface"
                   >
                     <span className="h-2 w-2 rounded-full bg-accent flex-shrink-0" aria-hidden="true" />
                     <span className="text-sm text-foreground/90">{highlight}</span>

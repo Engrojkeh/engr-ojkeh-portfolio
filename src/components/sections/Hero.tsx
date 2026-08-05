@@ -2,21 +2,13 @@
 
 import { personal } from "@/data/personal";
 import { socials } from "@/data/socials";
-import {
-  ChevronDown,
-  ExternalLink,
-  Music2,
-} from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 import AnimatedSection from "@/components/shared/AnimatedSection";
 import AvailabilityIndicator from "@/components/shared/AvailabilityIndicator";
 import Button from "@/components/ui/Button";
 import SocialLink from "@/components/ui/SocialLink";
-
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  ExternalLink,
-  Music2,
-};
+import { brandIcons } from "@/components/ui/BrandIcons";
 
 export default function Hero() {
   const scrollToProjects = () => {
@@ -44,7 +36,7 @@ export default function Hero() {
         />
         {/* Grid overlay */}
         <div
-          className="absolute inset-0 opacity-[0.05]"
+          className="absolute inset-0 opacity-[0.12]"
           style={{
             backgroundImage: `
               linear-gradient(var(--hero-grid-line) 1px, transparent 1px),
@@ -106,7 +98,7 @@ export default function Hero() {
                   key={social.name}
                   name={social.name}
                   url={social.url}
-                  icon={iconMap[social.icon] || ExternalLink}
+                  icon={brandIcons[social.icon]}
                   label={social.label}
                 />
               ))}

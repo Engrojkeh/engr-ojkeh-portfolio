@@ -1,16 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowUp, ExternalLink, Music2 } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 import { socials } from "@/data/socials";
 import { NAV_LINKS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import SocialLink from "@/components/ui/SocialLink";
-
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  ExternalLink,
-  Music2,
-};
+import { brandIcons } from "@/components/ui/BrandIcons";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -22,7 +18,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-border bg-surface/30">
+    <footer className="border-t border-border bg-surface-muted">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
           <div className="md:col-span-2">
@@ -37,7 +33,7 @@ export default function Footer() {
                   key={social.name}
                   name={social.name}
                   url={social.url}
-                  icon={iconMap[social.icon] || ExternalLink}
+                  icon={brandIcons[social.icon]}
                   label={social.label}
                 />
               ))}
