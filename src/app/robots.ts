@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/private/"],
       },
     ],
-    sitemap: "https://engrojkeh.dev/sitemap.xml",
+    sitemap: "https://engr-ojkeh-portfolio.vercel.app/sitemap.xml",
   };
 }
