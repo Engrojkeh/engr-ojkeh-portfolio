@@ -12,12 +12,7 @@ import SocialLink from "@/components/ui/SocialLink";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { cn } from "@/lib/utils";
 import { contactAction } from "@/app/actions/contact";
-import { ExternalLink, Music2 } from "lucide-react";
-
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  ExternalLink,
-  Music2,
-};
+import { brandIcons } from "@/components/ui/BrandIcons";
 
 interface FormData {
   name: string;
@@ -105,7 +100,7 @@ export default function Contact() {
                   key={social.name}
                   name={social.name}
                   url={social.url}
-                  icon={iconMap[social.icon] || ExternalLink}
+                  icon={brandIcons[social.icon]}
                   label={social.label}
                 />
               ))}

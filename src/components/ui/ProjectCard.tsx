@@ -26,7 +26,7 @@ export default function ProjectCard({ project, className }: ProjectCardProps) {
   return (
     <article
       className={cn(
-        "group relative flex flex-col rounded-xl border border-border bg-surface/50 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-xl hover:shadow-accent/5",
+        "group relative flex flex-col rounded-xl border border-border bg-surface overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-xl hover:shadow-accent/5",
         className
       )}
     >

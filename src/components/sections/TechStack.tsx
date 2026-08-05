@@ -44,7 +44,7 @@ export default function TechStack() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.2}>
-          <div key={activeCategory.name} className="p-6 md:p-8 rounded-xl border border-border bg-surface/40 min-h-[200px]">
+          <div key={activeCategory.name} className="p-6 md:p-8 rounded-xl border border-border bg-surface min-h-[200px]">
             <div className="flex flex-wrap gap-3">
               {activeCategory.items.map((item) => (
                 <TechBadge key={item} name={item} />
