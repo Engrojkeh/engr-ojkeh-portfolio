@@ -29,4 +29,6 @@ export const personal: Personal = {
     "Building Digital Products",
     "Technology Entrepreneurship",
   ],
+  avatar: "/profile.jpg",
+  aboutImage: "/about.jpg",
 };
