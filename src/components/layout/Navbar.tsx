@@ -104,8 +104,8 @@ export default function Navbar() {
             <div className="hidden md:flex items-center gap-3">
               <ThemeToggle />
               <a
-                href="/resume.pdf"
-                download
+                href="/engr-ojkeh-cv.pdf"
+                download="Engr-Ojkeh-Resume.pdf"
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold text-muted hover:text-foreground hover:bg-surface-muted border border-transparent hover:border-border transition-all duration-200"
                 aria-label="Download resume"
               >

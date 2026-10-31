@@ -63,14 +63,14 @@ export default function Resume() {
             </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-4">
-              <a href="/resume.pdf" download className="w-full sm:w-auto">
+              <a href="/engr-ojkeh-cv.pdf" download="Engr-Ojkeh-Resume.pdf" className="w-full sm:w-auto">
                 <Button size="lg" className="w-full sm:w-auto shadow-lg shadow-accent/25 hover:shadow-accent/40">
                   <Download className="h-4 w-4" aria-hidden="true" />
                   <span>Download Resume (PDF)</span>
                 </Button>
               </a>
               <a
-                href="/resume.pdf"
+                href="/engr-ojkeh-cv.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-border bg-surface text-sm font-semibold text-foreground hover:bg-surface-muted hover:text-accent hover:border-accent/40 transition-all duration-200"

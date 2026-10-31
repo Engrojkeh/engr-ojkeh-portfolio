@@ -104,8 +104,8 @@ export default function Hero() {
                   Hire Me
                 </Button>
                 <a
-                  href="/resume.pdf"
-                  download
+                  href="/engr-ojkeh-cv.pdf"
+                  download="Engr-Ojkeh-Resume.pdf"
                   className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-border bg-surface text-foreground hover:bg-surface-muted hover:border-accent/40 font-medium text-sm transition-all duration-200 shadow-sm"
                   aria-label="Download ATS Resume"
                 >
