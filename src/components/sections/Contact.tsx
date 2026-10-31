@@ -56,8 +56,7 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <SectionHeading
-            badge="📬 Get In Touch"
-            title="Let's Build Something Exceptional"
+            title="Contact Me"
             subtitle="Have an engineering project in mind, need technical advisory, or want to explore full-time collaboration? Reach out below."
           />
         </AnimatedSection>

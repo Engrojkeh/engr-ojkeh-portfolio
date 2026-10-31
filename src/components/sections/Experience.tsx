@@ -12,7 +12,6 @@ export default function Experience() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <SectionHeading
-            badge="🚀 Career Journey"
             title="Experience & Track Record"
             subtitle="My professional engineering path, roles held, and the scalable impact delivered across teams."
           />

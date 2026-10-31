@@ -38,8 +38,7 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <SectionHeading
-            badge="🛠️ What I Offer"
-            title="Engineering Services & Solutions"
+            title="Services & Solutions"
             subtitle="End-to-end technical capabilities tailored to build, scale, and maintain high-performing digital products."
           />
         </AnimatedSection>

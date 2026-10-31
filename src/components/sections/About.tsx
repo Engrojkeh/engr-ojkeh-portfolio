@@ -11,7 +11,6 @@ import {
   CheckCircle,
   Laptop,
   Quote,
-  Sparkles,
   Layers,
 } from "lucide-react";
 import { personal } from "@/data/personal";
@@ -41,8 +40,7 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <SectionHeading
-            badge="✨ About Me"
-            title="Behind the Code & Engineering Mindset"
+            title="About Me"
             subtitle="Get to know the person, craft, and architectural principles driving my work."
           />
         </AnimatedSection>
@@ -52,10 +50,6 @@ export default function About() {
           {/* Left Column: Story & Philosophy */}
           <div className="lg:col-span-7 space-y-6">
             <AnimatedSection delay={0.1}>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent/20 bg-accent/5 text-xs font-semibold text-accent mb-3">
-                <Sparkles className="h-3.5 w-3.5" />
-                <span>The Engineering Journey</span>
-              </div>
               <h3 className="font-display text-2xl sm:text-3xl font-bold text-foreground tracking-tight leading-snug">
                 Bridging software engineering, systems design, and entrepreneurship.
               </h3>

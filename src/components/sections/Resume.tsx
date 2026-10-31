@@ -18,7 +18,6 @@ export default function Resume() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <SectionHeading
-            badge="📄 Verified Credentials"
             title="Curriculum Vitae & Experience"
             subtitle="A detailed breakdown of my professional background, technical stack, and track record."
           />

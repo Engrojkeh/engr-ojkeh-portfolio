@@ -70,7 +70,6 @@ export default function WhyWorkWithMe() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <SectionHeading
-            badge="⭐ Collaboration & Craft"
             title="Why Work With Me"
             subtitle="The professional principles, work ethic, and technical rigor I bring to every engagement."
           />

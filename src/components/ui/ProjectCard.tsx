@@ -8,14 +8,6 @@ import { ImageIcon, ArrowUpRight } from "lucide-react";
 import { brandIcons } from "@/components/ui/BrandIcons";
 import { cn } from "@/lib/utils";
 
-const statusColors: Record<string, string> = {
-  Completed: "text-emerald-400 border-emerald-400/30 bg-emerald-400/10",
-  "In Progress": "text-sky-400 border-sky-400/30 bg-sky-400/10",
-  Maintenance: "text-amber-400 border-amber-400/30 bg-amber-400/10",
-  Archived: "text-rose-400 border-rose-400/30 bg-rose-400/10",
-  Planned: "text-purple-400 border-purple-400/30 bg-purple-400/10",
-};
-
 interface ProjectCardProps {
   project: Project;
   className?: string;
@@ -25,6 +17,9 @@ export default function ProjectCard({ project, className }: ProjectCardProps) {
   const [imgError, setImgError] = useState(false);
   const hasImage = project.image && !imgError;
   const GitHubIcon = brandIcons.GitHub;
+
+  // Derive a slug from the project name for the address bar
+  const slug = project.name.toLowerCase().replace(/[^a-z0-9]/g, "");
 
   return (
     <article
@@ -36,33 +31,25 @@ export default function ProjectCard({ project, className }: ProjectCardProps) {
       {/* macOS-style Window Frame Header */}
       <div className="flex items-center justify-between px-4 py-3 bg-surface-muted/90 border-b border-border/70 backdrop-blur-md">
         <div className="flex items-center gap-1.5" aria-hidden="true">
-          <span className="h-3 w-3 rounded-full bg-[#ff5f56] border border-[#e0443e]/40 shadow-sm" />
-          <span className="h-3 w-3 rounded-full bg-[#ffbd2e] border border-[#dea123]/40 shadow-sm" />
-          <span className="h-3 w-3 rounded-full bg-[#27c93f] border border-[#1aab29]/40 shadow-sm" />
+          <span className="h-3 w-3 rounded-full bg-[#ff5f56] border border-[#e0443e]/40 shadow-xs" />
+          <span className="h-3 w-3 rounded-full bg-[#ffbd2e] border border-[#dea123]/40 shadow-xs" />
+          <span className="h-3 w-3 rounded-full bg-[#27c93f] border border-[#1aab29]/40 shadow-xs" />
         </div>
 
         {/* Center realistic browser URL bar */}
-        <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-surface/80 border border-border/70 text-[11px] font-mono text-muted tracking-tight truncate max-w-[190px] sm:max-w-[220px]">
+        <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-surface/80 border border-border/70 text-[11px] font-mono text-muted tracking-tight truncate max-w-[200px]">
           <span className="text-[10px] text-accent">🔒</span>
-          <span className="truncate">engrojkeh.dev/{project.id}</span>
+          <span className="truncate">engrojkeh.dev/{slug}</span>
         </div>
 
-        {/* Status / Category badge */}
-        <span
-          className={cn(
-            "px-2.5 py-0.5 text-[10px] font-semibold tracking-wide uppercase rounded-full border shadow-xs",
-            statusColors[project.status] || "text-muted border-border"
-          )}
-        >
-          {project.status}
-        </span>
+        <div className="w-10" aria-hidden="true" />
       </div>
 
       {/* Image / Mockup Viewport */}
       <div className="relative aspect-[16/10] w-full overflow-hidden bg-surface-muted">
         {hasImage ? (
           <Image
-            src={project.image!}
+            src={project.image}
             alt={`${project.name} interface preview`}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -71,40 +58,26 @@ export default function ProjectCard({ project, className }: ProjectCardProps) {
           />
         ) : (
           <div
-            className="flex h-full w-full items-center justify-center bg-gradient-to-br from-accent/15 via-surface to-surface-muted"
+            className="flex h-full w-full items-center justify-center bg-gradient-to-br from-accent/10 via-surface to-surface-muted"
           >
             <div className="flex flex-col items-center gap-2 text-muted">
-              <ImageIcon className="h-8 w-8 text-accent/60" aria-hidden="true" />
-              <span className="text-xs font-mono">{project.name}</span>
+              <div className="p-3 rounded-2xl bg-accent/10 border border-accent/20">
+                <ImageIcon className="h-6 w-6 text-accent" aria-hidden="true" />
+              </div>
+              <span className="text-xs font-mono font-medium text-foreground/80">{project.name}</span>
             </div>
           </div>
         )}
 
-        {/* Glass sheen overlay on image */}
+        {/* Glass sheen overlay */}
         <div
           className="absolute inset-0 pointer-events-none bg-gradient-to-t from-surface/90 via-surface/20 to-transparent opacity-80"
           aria-hidden="true"
         />
-
-        {project.featured && (
-          <span className="absolute top-3 right-3 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full bg-accent/90 text-white shadow-md backdrop-blur-md">
-            Featured
-          </span>
-        )}
       </div>
 
       {/* Card Content & Details */}
       <div className="flex flex-col flex-1 p-6">
-        <div className="flex items-center gap-2 mb-2">
-          <span className="text-xs font-semibold uppercase tracking-wider text-accent font-mono">
-            {project.category}
-          </span>
-          <span className="text-muted/40">•</span>
-          <span className="text-xs text-muted font-medium">
-            {project.role}
-          </span>
-        </div>
-
         <h3 className="font-display text-xl sm:text-2xl font-bold text-foreground group-hover:text-accent transition-colors mb-2.5">
           {project.name}
         </h3>
@@ -125,7 +98,7 @@ export default function ProjectCard({ project, className }: ProjectCardProps) {
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl border border-border bg-surface text-xs font-semibold text-foreground hover:bg-surface-muted hover:text-accent hover:border-accent/40 transition-all duration-200 shadow-sm"
+            className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl border border-border bg-surface text-xs font-semibold text-foreground hover:bg-surface-muted hover:text-accent hover:border-accent/40 transition-all duration-200 shadow-xs"
             aria-label={`${project.name} GitHub repository`}
           >
             {GitHubIcon && <GitHubIcon className="h-3.5 w-3.5" />}
