@@ -33,7 +33,7 @@ export const projects: Project[] = [
     github: "https://github.com/Engrojkeh/taskflow",
     live: "https://taskflow-demo.vercel.app",
     featured: true,
-    image: "/projects/taskflow.png",
+    image: "/projects/taskflow.jpg",
     category: "Web Application",
   },
   {
@@ -60,7 +60,7 @@ export const projects: Project[] = [
     github: "https://github.com/Engrojkeh/cryptovault",
     live: "https://cryptovault-demo.vercel.app",
     featured: true,
-    image: "/projects/cryptovault.png",
+    image: "/projects/cryptovault.jpg",
     category: "Financial System",
   },
   {
@@ -86,7 +86,7 @@ export const projects: Project[] = [
     github: "https://github.com/Engrojkeh/devmetrics",
     live: "https://devmetrics-demo.vercel.app",
     featured: true,
-    image: "/projects/devmetrics.png",
+    image: "/projects/devmetrics.jpg",
     category: "Developer Tool",
   },
   {
@@ -112,7 +112,7 @@ export const projects: Project[] = [
     github: "https://github.com/Engrojkeh/cloudpulse",
     live: "https://cloudpulse-demo.vercel.app",
     featured: true,
-    image: "/projects/cloudpulse.png",
+    image: "/projects/cloudpulse.jpg",
     category: "Cloud Infrastructure",
   },
   {
@@ -138,7 +138,7 @@ export const projects: Project[] = [
     github: "https://github.com/Engrojkeh/paybridge",
     live: "https://paybridge-demo.vercel.app",
     featured: true,
-    image: "/projects/paybridge.png",
+    image: "/projects/paybridge.jpg",
     category: "Fintech Application",
   },
   {
@@ -164,7 +164,7 @@ export const projects: Project[] = [
     github: "https://github.com/Engrojkeh/shopsphere",
     live: "https://shopsphere-demo.vercel.app",
     featured: true,
-    image: "/projects/shopsphere.png",
+    image: "/projects/shopsphere.jpg",
     category: "E-Commerce",
   },
   {
@@ -190,7 +190,7 @@ export const projects: Project[] = [
     github: "https://github.com/Engrojkeh/mediconnect",
     live: "https://mediconnect-demo.vercel.app",
     featured: true,
-    image: "/projects/mediconnect.png",
+    image: "/projects/mediconnect.jpg",
     category: "Healthcare Platform",
   },
   {
@@ -216,7 +216,7 @@ export const projects: Project[] = [
     github: "https://github.com/Engrojkeh/authshield",
     live: "https://authshield-demo.vercel.app",
     featured: true,
-    image: "/projects/authshield.png",
+    image: "/projects/authshield.jpg",
     category: "Security & Auth",
   },
 ];
