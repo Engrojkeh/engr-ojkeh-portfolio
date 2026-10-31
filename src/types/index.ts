@@ -10,6 +10,8 @@ export interface Personal {
   philosophy: string;
   values: string[];
   highlights: string[];
+  avatar?: string;
+  aboutImage?: string;
 }
 
 export interface Social {

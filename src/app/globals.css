@@ -15,9 +15,21 @@
   --accent-muted: #6d28d9;
   --muted: #475569;
 
+  /* Font variables with fallbacks */
+  --font-inter: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-syne: "Syne", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-jetbrains-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
   /* Decorative elements (Hero grid, glows) — darker on light background. */
   --hero-glow: rgba(124, 58, 237, 0.15);
-  --hero-grid-line: rgba(15, 23, 42, 0.15);
+  --hero-grid-line: rgba(15, 23, 42, 0.12);
+
+  /* Glass tokens */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(15, 23, 42, 0.08);
+  --glass-card: rgba(255, 255, 255, 0.8);
+  --glass-card-hover: rgba(255, 255, 255, 0.95);
+  --glass-sheen: rgba(255, 255, 255, 0.6);
 }
 
 /* Dark theme. next-themes adds the `dark` class to <html>. */
@@ -31,9 +43,21 @@
   --accent-muted: #4c1d95;
   --muted: #64748b;
 
+  /* Font variables */
+  --font-inter: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-syne: "Syne", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-jetbrains-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
   /* Decorative elements — light on dark background. */
-  --hero-glow: rgba(124, 58, 237, 0.18);
-  --hero-grid-line: rgba(226, 232, 240, 0.5);
+  --hero-glow: rgba(124, 58, 237, 0.22);
+  --hero-grid-line: rgba(226, 232, 240, 0.05);
+
+  /* Glass tokens */
+  --glass-bg: rgba(18, 18, 26, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-card: rgba(18, 18, 26, 0.55);
+  --glass-card-hover: rgba(24, 24, 36, 0.75);
+  --glass-sheen: rgba(255, 255, 255, 0.1);
 }
 
 /*
@@ -71,10 +95,81 @@ body {
 
 /* Gradient text utility — used on the Hero accent name. */
 .gradient-text {
-  background: linear-gradient(135deg, var(--accent), var(--accent-muted));
+  background: linear-gradient(135deg, #a78bfa, var(--accent), #c084fc);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Glassmorphism utility classes */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.25);
+}
+
+.glass-card {
+  position: relative;
+  background: var(--glass-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--glass-sheen), transparent);
+  pointer-events: none;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+.glass-card:hover {
+  background: var(--glass-card-hover);
+  border-color: rgba(124, 58, 237, 0.4);
+  box-shadow: 0 20px 40px -15px rgba(124, 58, 237, 0.15), 0 0 20px 0 rgba(124, 58, 237, 0.08);
+  transform: translateY(-2px);
+}
+
+.glass-pill {
+  background: var(--glass-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  transition: all 0.2s ease;
+}
+
+.glass-pill:hover {
+  border-color: rgba(124, 58, 237, 0.4);
+  background: var(--glass-card-hover);
+}
+
+/* Ambient light glow */
+.ambient-glow-purple {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.18) 0%, rgba(124, 58, 237, 0.05) 50%, transparent 70%);
+}
+
+.ambient-glow-blue {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, rgba(56, 189, 248, 0.03) 50%, transparent 70%);
 }
 
 ::selection {
