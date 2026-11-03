@@ -29,3 +29,4 @@
   <!-- "O" letter — right side (open oval) -->
   <ellipse cx="45" cy="32" rx="10" ry="13" fill="none" stroke="url(#text-grad)" stroke-width="5" />
 </svg>
+
